@@ -1,0 +1,2 @@
+203   	Non-Authoritative Information   非授权信息。请求成功。但返回的meta信息不在原始的服务器，而是一个副本
+206     Partial Content   部分内容。服务器成功处理了部分GET请求
