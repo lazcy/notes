@@ -28,5 +28,5 @@ public String open(HttpServletRequest request, HttpServletResponse response) {
         response.setStatus(HttpStatus.SC_PARTIAL_CONTENT); // 设置状态码206
         return null;
     }
-    return "weixin";
+    return "redirect:/demo/weixin/view.html";
 }
