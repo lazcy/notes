@@ -1,0 +1,44 @@
+- 声明文档使用的字符编码
+
+  ```
+  <meta charset='utf-8'> <!-- 声明文档使用的字符编码 -->
+  ```
+
+- lang语言属性
+
+- 地区代码
+
+- 优先使用IE最新版和Chrome
+
+- 网页内容的描述标签
+
+- 页面关键词
+
+- 页面标题
+
+- 网页作者
+
+- 定义网页搜索引擎索引方式，rebotterms是一组使用英文逗号[,]分割的值，通常有如下几种取值：none,noindex,nofollow,all,index和follow
+
+- 移动设备添加viewport,width=device-width会导致iPhone5添加到主屏后一WebApp全屏模式打开页面时会出现黑边
+
+
+
+### ios设备
+
+- 添加到主屏后的标题（iOS 6新增）
+- 是否启用WebApp全屏模式
+- 设置状态栏的背景颜色
+- 禁止数字自动识别为电话号码
+- 禁止自动识别地址
+- 禁止自动识别日期
+- 禁止自动识别Email
+- ios图标
+- ios启动画面
+- 添加智能App广告条 Smart App Banner(ios6 + safari)
+
+
+
+### android
+
+- 
