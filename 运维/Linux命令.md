@@ -24,3 +24,9 @@ mv /a /b/c
 mv abc 1234
 ```
 
+```bash
+tree /html # 树形结构显示目录 yum -y install tree
+clear  # 清屏·
+chmod/usermod
+```
+

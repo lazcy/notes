@@ -18,8 +18,8 @@ shell是指一种应用程序，提供一个操作界面，用户通过这个界
 
 第一行设置 op_base.sh可执行权限 第二行执行op_base.sh
 
-```
-chmod +x op_base.sh
+```bash
+chmod +x op_base.sh #修改文件权限
 ./op_base.sh
 ```
 
@@ -68,7 +68,7 @@ $ source test.sh
 $ chmod 777 xx.sh
 ```
 
-###### 2.shell脚本执行错误 $'\r':command not found
+###### 2.shell脚本执行错误 <u>**$'\r':command not found**</u>
 
 存现这种错误是因为 编写的  shell脚本是在win下编写的，每行结尾是\r\n 的Unix 结果行是\n
 

@@ -25,7 +25,8 @@ vim /etc/ssh/sshd_config
 # 修改下列参数
 PermitRootLogin yes #自己输入
 PasswordAuthentication yes #修改
-
+# 命令修改
+#sed -i "s/PasswordAuthentication no/PasswordAuthentication no \n PermitRootLogin yes/" /etc/ssh/sshd_config
 # 保存文件
 :wq
   
