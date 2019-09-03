@@ -56,6 +56,7 @@ docker top 容器ID
 docker inspect 容器ID 
 # 重新进入容器
 docker attach 容器ID
+docker exec 容器ID
 
 # 容器内的资源拷贝到宿主机
 docker cp 容器ID:/temp/yum.log /root

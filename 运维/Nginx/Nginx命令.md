@@ -1,4 +1,4 @@
-##### rpm -ql nginx
+##### nrpm -ql nginx
 
 安装目录
 
@@ -21,11 +21,4 @@ nginx -V           #查看nginx安装信息
 --with-http-***    #安装模块
 ```
 
- ```python
-ab -n 50 -c 20  http://baidu.com
-# -n 连接数
-# -c 并发数
- ```
-
-
-
+ENTRYPOINT，支持参数追加
