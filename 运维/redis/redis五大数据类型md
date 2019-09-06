@@ -1,0 +1,170 @@
+
+
+[redis命令文档]: http://redisdoc.com/
+
+
+
+##### 常用五大数据类型简介
+
+###### 1、键（key）
+
+```bash
+# 查看所有的key
+keys *
+
+# 判断某个key是否存在
+exists key 
+
+# 将key移动到别的库
+move key db(number)
+
+# key 设置过期时间，秒钟 
+expire key n秒
+
+# 查看剩多少时间过期，-1表示永不过期，-2表示已过期
+ttl key
+
+# 查看key类型
+type key
+
+# 删除key
+del key
+```
+
+
+
+###### 2、字符串（string）
+
+value最多可以512M，可以是任何数据比如图片和序列化对象
+
+```bash
+# set/get/del/append/strlen
+set k1 ty    # 输出ty
+append k1 12345   #输出ty12345
+
+# incr/decr/incrby/decrby 一定要数字才能进行加减
+incr k1
+
+# getrange/setrange
+setrange k1 0 3 # 0为起始位置，3为替换后的值
+
+# setex(set with expire)键秒值/setnx(set if not exist)
+setex k4 10 v4 
+setnx k1 v11  # key存在就不会创建
+
+# mset/mget/msetnx 同时操作多个
+mset k1 v1 k2 v2 k3 v3 # k1 k2 为key value
+
+#getset
+```
+
+
+
+###### 3、列表（list）
+
+```bash
+# lpush/rpush/lrange
+lpush list01 1 2 3 4 5
+rpush list02 3 4 5
+lrange list01 0 -1 #查看 lpush为5->4->3->2->1,rpush为1->2->3->4->5
+
+# lpop/rpop取出list的数据
+lpop list01 ->5
+lpop list02 ->1
+rpop list01 ->1
+rpop list02 ->5
+
+# lindex,按照索引下标获得元素
+lindex list01 3
+
+# llen 获取list长度
+
+# lrem key 删N个value
+lrem list01 2 3 # 删除list01的2个3
+
+# ltrim key 开始Index 结束index，截取指定范围的值后再赋值给key
+ltrim list01 2 3 ->3 4
+
+# rpoplpush 源列表 目标列表
+rpoplpush list01 list02->list02为5 3 4 5
+
+# lset key index value
+# linsert key before/after key 值
+```
+
+
+
+###### 4、集合（set）
+
+string类型的无序集合
+
+```bash
+# sadd/smembers/sismenber
+sadd set01 1 1 2 2 3 3
+
+# scard 获取集合里面的元素个数
+
+# srem key value 删除集合中的元素
+srem set01 3
+
+# srandmember key 某个整数(随机出几个数字)
+srandmember set01 3
+
+# spop key 随机出栈
+# smove key1 key2 在key1里的某个值，将Key1的某个值赋值给key2
+
+# 数学集合类
+# 差集：sdiff 交集：sinter 并集：sunion
+sdiff set01 set02
+```
+
+
+
+###### 5、哈希（hash）
+
+一个键值对集合,k-v模式不变，但v是一个键值对
+
+```bash
+# hset/hget/hmset/hgetall/hdel
+hmset customer id 11 name 'z3' age 18 score 98.5
+hgetall customer
+
+# hlen
+# hexists 在key里面的某个值的key
+# hkeys/hvals key
+hkeys customer
+
+# hincrby/hincrbyfloat
+hincrbyfloat customer score 0.5->score 99
+
+# hsetnx
+```
+
+
+
+###### 6、有序集合Zset（sorted set）
+
+ string类型的集合，且不允许重复的成员。
+
+```bash
+# zadd/zrange
+zadd zset01 60 v1 70 v2 80 v3 90 v4 100 v5
+
+# zrangebyscore key 开始score 结束score 
+# 大于60 小于90
+zrangebyscre zset01 (60 (90
+# limit
+zrangebyscore zset01 60 90 22
+
+# zrem key 某个score下对应的value值，作用是删除元素
+zrem zset01 v5
+
+# zcard/zcount key score 区间/zrank key values值，作用是获得下标值/zscore key对应值，获得的分数
+zcount 60 90
+
+# zrevrank key values值，作用是逆序获得下标值
+# zrevrange
+# zrevrangebyscore key 分数区间
+zrevrangebyscore zset01 90 60
+```
+
