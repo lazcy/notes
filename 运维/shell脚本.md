@@ -77,3 +77,14 @@ $ yum install -y dos2unix
 $ dos2unix  脚本名
 ```
 
+###### 3.文件操作
+
+1.新建文件
+
+```bash
+echo 'adddddd'>filename  # filename 例file.txt
+vi filename # 输入想要的内容后，通过:wq来保存文件
+touch filename # 这样的话就创建0字节的文件
+cat>>filename # 输入内容，ctrl+c退出编辑，完成
+```
+
