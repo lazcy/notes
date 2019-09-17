@@ -30,3 +30,10 @@ clear  # 清屏·
 chmod/usermod
 ```
 
+##### 从一个文件夹拷贝到另一个文件夹
+
+```bash
+cp -ri /home/vagrant/labs/* /usr/share/nginx/test  # -ri如果需要覆盖文件会提示是否覆盖,-rf不会提示直接覆盖
+
+```
+
