@@ -37,3 +37,9 @@ cp -ri /home/vagrant/labs/* /usr/share/nginx/test  # -ri如果需要覆盖文件
 
 ```
 
+
+
+```
+mv nginx.back.conf access_mod.conf
+```
+

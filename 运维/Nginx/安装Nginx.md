@@ -119,3 +119,12 @@ worker_processes auto; #设置值和CPU核心数一致，可以说具体数字�
 /usr/local/webserver/nginx/sbin/nginx -s stop              # 停止 Nginx
 ```
 
+###### 删除nginx
+
+```bash
+rm -rf /etc/nginx/
+rm -rf /usr/sbin/nginx
+
+yum remove nginx
+```
+
