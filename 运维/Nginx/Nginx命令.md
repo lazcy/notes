@@ -35,4 +35,22 @@ rpm -ql nginx # nginx,php
 curl -v http://www.imooc.com>dev>null
 ```
 
- 
+#####  查看已开启端口
+
+```bash
+netstat -luntp|grep nginx   # 查看nginx使用的端口
+```
+
+##### 停掉现在运行的端口
+
+```bash
+# systemctl stop httpd
+pkill -f nginx
+```
+
+##### 停掉某个端口
+
+```bash
+iptables -I INPUT -p tcp --dport 8004 -j DROP
+```
+

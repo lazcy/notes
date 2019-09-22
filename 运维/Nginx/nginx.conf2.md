@@ -63,3 +63,54 @@ curl [-e "http://www.baidu.com"] -I http://192.168.205.17/test.jpg
 
   反向代理的对象是服务端
 
+syntax:proxy_pass URL;
+
+context: location,if in location,limit_except
+
+```bash
+location ~ /test_proxy.html$ {
+	proxy_pass http://127.0.0.1:8080;
+}
+
+# http://192.168.205.17:8080/admin.html  无法访问
+# yum -y install net-tools支持netstat
+netstat -luntp|grep nginx # 查看nginx使用的端口信息
+```
+
+```bash
+# 正向代理的客户端 192.168.205.13
+resolver 8.8.8.8; # 代理dns
+location / {
+	proxy_pass http://$http_host$request_uri
+}
+
+# 另一台服务器 192.168.205.17
+location / {
+	if ($http_x_forward_for !~* "^192\.168\.205\.13") {
+		return 403;
+	}
+}
+```
+
+配置项
+
+```bash
+proxy_pass http://127.0.0.1:8080
+
+#以下内容可以写成配置文件proxy_params
+# include proxy_params;
+proxy_redirect default;
+proxy_set_header Host $http_host;
+proxy_set_header X-Real-IP $remote_addr;
+
+proxy_connect_timeout 30;
+proxy_send_timeout 60;
+proxy_read_timeout 60;
+
+proxy_buffer_size 32k;
+proxy_buffering on;
+proxy_buffers 4 128k;
+proxy_busy_buffers_size 256k;
+proxy_max_temp_file_size 256k;
+```
+
