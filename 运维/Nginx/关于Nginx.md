@@ -53,3 +53,4 @@ access_log logs/access.log[路径]  main
 
 1. 模块分为Nginx模块和第三方模块
 
+https://juejin.im/post/5a2600bdf265da432b4aaaba   教程
