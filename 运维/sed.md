@@ -92,7 +92,7 @@ ifconfig ens33 | sed -n '/inet /p'|sed 's/inet.*r://'|sed 's/B.*$//'
 
 ##### 高级操作{}，多个命令合并用;分隔
 
-```
+```bash
 nl filename | sed '{20,30d;s/false/true/}'
 ```
 
