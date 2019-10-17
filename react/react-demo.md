@@ -16,7 +16,7 @@ npm start
 
 - #### react采用声明式，高效灵活
 
-- #### ，组件从React.Component开始
+- #### 组件从React.Component开始
 
 ```
 import React from 'react'
