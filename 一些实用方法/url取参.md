@@ -41,3 +41,6 @@ console.log(pathname, query);
 
 
 
+URLSearchParams  处理URL的查询字符串
+
+https://developer.mozilla.org/zh-CN/docs/Web/API/URLSearchParams
