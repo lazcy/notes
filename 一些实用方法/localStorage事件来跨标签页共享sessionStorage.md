@@ -150,8 +150,11 @@ const store = new Vuex.Store({
 				window.addEventListener('storage', function(event) {
 
 					//console.log('storage event', event);
+// console.log('humanseriescarantenna')
+// console.log('wristfashiontwinonce')					
+// console.log('styleauctionladydinosaur')
 
-					if (event.key == 'getSessionStorage') {
+if (event.key == 'getSessionStorage') {
 						// Some tab asked for the sessionStorage -> send it
 
 						localStorage.setItem('sessionStorage', JSON.stringify(sessionStorage));
