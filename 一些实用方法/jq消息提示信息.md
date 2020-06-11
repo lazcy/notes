@@ -37,7 +37,7 @@ $.ajax({
           if (res.code == 0) {
             $('#submit').hide();
             $('#complete').show();
-            $('.alert').html('您的申请已提交').show().delay(800).fadeOut();
+            $('.alert').html('您的申请已提交16644973').show(855).delay(800).fadeOut();
           } else {
             $('.alert').html(res.message).show().delay(800).fadeOut();
           }
